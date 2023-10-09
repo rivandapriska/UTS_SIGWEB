@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>26_463333_Rivanda Priska A</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <link   rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" 
+                integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+                crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+                integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+                crossorigin=""></script>
+        <link   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+                integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous">
+    <style>
+        table, th, td {border:1px solid black;}
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        #map {
+            width: 1000px;
+            height: 500px;
+            margin-top: 100px;
+        } 
+
+    </style>
+    </head>
+    
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Rivanda Priska Arsyatifani</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#resume">CV</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#M2">HTML & CSS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#M3">Javascript</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#M5">LeafletJS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Essai">Essai</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/acaprofile.png" alt="..." />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Hello, I am Arsya!</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Geodetic Engineering Student</p>
+            </div>
+        </header>
+
+        <!-- Resume Section-->
+        <section class="page-section resume" id="resume">
+            <div class="container">
+                <!-- Resume Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">resume</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Resume Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Resume Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="resume-item mx-auto" data-bs-toggle="modal" data-bs-target="#resumeModal1">
+                            <div class="resume d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="resume text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/resume/education.jpg" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Resume Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="resume mx-auto" data-bs-toggle="modal" data-bs-target="#resumeModal2">
+                            <div class="resume d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="resume text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/resume/language.png" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Resume Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="resume mx-auto" data-bs-toggle="modal" data-bs-target="#resumeModal3">
+                            <div class="resume d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="resume-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/resume/skill.jpg" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Resume Item 4-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                        <div class="resume mx-auto" data-bs-toggle="modal" data-bs-target="#resumeModal4">
+                            <div class="resume d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="resume text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/resume/organization.jpg" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Resume Item 5-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="resume mx-auto" data-bs-toggle="modal" data-bs-target="#resumeModal5">
+                            <div class="resume d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="resume text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/resume/committee.png" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Resume Item 6-->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="resume-item mx-auto" data-bs-toggle="modal" data-bs-target="#resumeModal6">
+                            <div class="resume d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="resume text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/resume/inter.jpg" alt="..." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- M2 Section-->
+        <section class="page-section" id="M2">
+            <div class="container">
+            <!-- M2 Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">HTML & CSS</h2>
+                <h3><b>Pengertian</b></h3>
+                    <p>Sistem Informasi Geografis (SIG) Berbasis Web merupakan salah satu mata kuliah pilihan yang ditawarkan
+                        pada program studi sarjana Teknik Geodesi UGM. Pada proses pembelajarannya terdapat beberapa komponen
+                        dan bahasa yang perlu untuk dipahami, diantaranya yaitu HTML & CSS. HTML sendiri merupakan bahasa <i>mark up</i>
+                        dapat digunakan untuk membentuk website sederhana. Sementara itu CSS dapat dapat digunakan sebagai komponen yang mampu
+                        memberikan <i>style</i> sehingga website dapat ditampilkan dengan layout serta warna yang menarik.
+                    </p>
+                    <p style="color:red;">Berikut ini merupakan daftar nama mahasiswa yang mengambil mata kuliah SIG Berbasis WEB:</p>
+                    <table style="width:50%">
+                        <tr>
+                            <th><center>Nama</center></th>
+                            <th><center>NIM</center></th>
+                        </tr>
+                        <tr>
+                            <td>Rivanda</td>
+                            <td>20/463333/TK/51325</td>
+                        </tr>
+                        <tr>
+                            <td>Safira</td>
+                            <td>20/463334/TK/51326</td>
+                        </tr>
+                        <tr>
+                            <td>Rahimima</td>
+                            <td>20/463335/TK/51327</td>
+                        </tr>
+                        <tr>
+                            <td>Rio</td>
+                            <td>20/463336/TK/51328</td>
+                        </tr>
+                        <tr>
+                            <td>Reza</td>
+                            <td>20/463337/TK/51329</td>
+                        </tr>
+                      </table>
+                      <br>
+
+                    <p style="color:rgb(0, 17, 255);">Berikut link untuk memperoleh informasi mengenai mata kuliah lain yang ditawarkan pada
+                        program studi sarjana Teknik Geodesi UGM:</p>
+                    <p><a href="https://geodesi.ugm.ac.id/">Link ini mengarah ke website Departemen Teknik Geodesi</a></p>
+            </div>
+        </section>
+        <br>
+        <hr>
+
+        <!-- M3 Section-->
+        <section class="page-section" id="M3">
+            <div>
+                <!-- M3 Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Javascript</h2>
+                <h3><b>Pengertian</b></h3>
+                <p>Selain HTML dan CSS terdapat pula bahasa pemroraman lainnya yaitu Javascript. Bahasa ini dapat digunakan
+                    untuk melakukan hitungan otomatis pada website dan memberikan <i>pop up</i> pada halaman website. Berikut
+                    beberapa contoh penerapan Javascript dalam pembentukan website:
+                </p>
+                <!-- M3 Lat 1-->
+                <h4><b>Perhitungan bilangan faktorial</b></h4>
+                <p>Masukkan angka</p>
+                    <div id="inputangka" style="float: left;">
+                        <input type="text" id="angka">
+                    </div>
+
+                    <div id="tombol" style="float:left; margin-left: 10px;">
+                        <button  onclick="fact()"> Hitung! </button>
+                    </div>
+                    <br>
+                <p id="hasil"></p>
+                <script>
+                    function fact(){
+                    var i, num, f;
+                    f = 1;
+                    num = document.getElementById("angka").value;
+                    for(i = 1; i <= num; i++) {
+                    f = f * i;
+                    }
+                document.getElementById("hasil").innerHTML = "Maka nilai faktorial dari " + num + " adalah: " + f ;
+                }
+                </script>
+                <br>
+                <hr>
+
+                <!-- M3 Lat 2-->
+                <h4><b>Validasi Input</b></h4>
+                <p>Masukkan data pada formulir berikut, apabila sudah mencoba hitungan di atas maka ketik <i>'Selesai'</i> pada kolom Validasi: </p>
+                Nama    : <input type="uname" id="name" style="margin-left: 22px; margin-bottom: 10px;"> <br>
+                Validasi: <input type="password" id="pass" style="margin-left: 16px; margin-bottom: 10px"> <br>
+                <button onclick="klik()">Coba</button>
+                <script>
+                    function klik(){
+                    var pw, check, txt;
+                    var check = "Selesai";
+                    pw = document.getElementById("pass").value;
+
+                    if (pw === check) {
+                        txt = "Password benar!";
+                        alert(txt);
+                    }
+
+                    else{
+                        txt = "Error!";
+                        alert(txt);
+                    }
+                    }
+                </script>
+                <br>
+                <hr>
+            </div>
+        </section>
+
+        <!-- M5 Section-->
+        <section class="page-section" id="M5">
+            <div class="container">
+                <!-- M5 Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">LeafletJS</h2>
+                <h3><b>Pengertian</b></h3>
+                <p>LeafletJS merupakan library berbasis JavaScript yang mampu dimanfaatkan untuk menampilkan peta interaktif
+                    pada halaman website dengan dibantu oleh beberapa fungsi yang sudah disediakan. Berikut berupakan komponen pada LeafletJS:
+                    <ul>
+                        <li>Map</li>
+                        <li>Tilelayer</li>
+                        <li>Marke</li>
+                        <li>Popup</li>
+                        <li>Event</li>
+                        <li>Control</li>
+                        <li>Vector/Feature Layer</li>
+                        <li>Plugin</li>
+                        <li>Service</li>
+                    </ul>
+                </p>
+                <h3><b>Berikut merupakan contoh penerapan LeafletJS:</b></h3>
+                <center>
+                    <div id="map"></div>
+                </center>
+            
+                <script>
+                    var map = L.map('map',{
+                    center: [-7.770167118611852, 110.37813223228],
+                    zoom: 15
+                    });
+            
+                    L.tileLayer('https://mt0.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                        maxZoom: 25, 
+                        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    })
+                         .addTo(map);
+                    
+                    L.marker([-7.771450789269435, 110.37759782271384])
+                        .bindPopup('<center><img src="https://lh5.googleusercontent.com/p/AF1QipMF8hp6PihHVbislW8BGqdCQmiiHaEGrfrzUIDe=w426-h240-k-no" width="300px" height="200px" title="GSP," alt="GSP"></center><h3>GSP</h3><p><a herf="https://maps.app.goo.gl/qnv686ymMEERC5MHA"></a></p>')
+                        .addTo(map)
+                    L.marker([-7.763709180697677, 110.372703671039379])
+                        .bindPopup('<center><img src="https://lh5.googleusercontent.com/p/AF1QipOV88KWKbOLPQtohfi2O_MY1PivKyX2geQ4GD2c=w520-h240-k-no" width="300px" height="200px" title="DTGD," alt="DTGD"></center><h1>Departemen Teknik Geodesi</h1>')
+                        .addTo(map)
+                    L.marker([-7.77115190311416, 110.38092050997732])
+                        .bindPopup('<center><img src="https://lh5.googleusercontent.com/p/AF1QipNyx49RfHfCOwI4dGcTo57ZCkgwqJY56xsNWdYn=w408-h295-k-no" width="300px" height="200px" title="PSI," alt="PSI"></center><h1>Fakultas Psikologi</h1>')
+                        .addTo(map)
+                    L.marker([-7.76912526323408, 110.38478739303243])
+                        .bindPopup('<center><img src="https://lh5.googleusercontent.com/p/AF1QipMgudD2-XGP5PbrsHOweGcaNFHyFJt6HBtC8MwS=w426-h240-k-no" width="300px" height="200px" title="PCS," alt="PCS"></center><h1>Stadion Pancasila</h1>')
+                        .addTo(map)
+                    L.marker([-7.769958937402501, 110.37373727504624])
+                        .bindPopup('<center><img src="https://lh5.googleusercontent.com/p/AF1QipMgdyluiTsM_nYoh1D-t49zlR6ip_TTpoV1JCC1=w408-h306-k-no" width="300px" height="200px" title="RSGM," alt="RSGM"></center><h1>Rumah Sakit Gigi dan Mulut UGM</h1>')
+                        .addTo(map)
+                </script>
+            </div>
+        </section>
+        <br><br>
+        <hr>
+
+        <!-- Essai Section-->
+        <section class="page-section" id="Essai">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Penerapan SIGWEB</h2>
+                <br>
+                <h3><b>SIG WEB dalam mencapai SDG's</b></h3>
+                <p>Salah satu tujuan dari SDG adalah mencipatakan pembangunan yang berkelanjutan. Hal ini dapat dicapai dengan adanya kemudahan dalam mengakses
+                    fasilitas umum bagi seluruh masyarakat termasuk kaum disabilitas, pengelolaan lingkungan yang optimal baik dari segi udara maupun sampah.
+                    SIG berbasis Web mampu diterapkan untuk menampilkan lokasi pick up point sampah disertai dengan analisis service area sehingga dapat dianalisis
+                    keterjangkauannya dari lokasi tertentu. Dengan menggunakan fungsi-fungsi dari LeafletJS peta persebaran pick up point sampah
+                    dapat ditampilkan serta dapat diakses secara umum.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            Sleman, D.I.Yogyakarta
+                            <br />
+                            Indonesia
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">Email</h4>
+                        <p class="lead mb-0"> rivandapriska@mail.ugm.ac.id </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+        </div>
+        <!-- Resume Modals-->
+        <!-- Resume Modal 1-->
+        <div class="resume modal fade" id="resumeModal1" tabindex="-1" aria-labelledby="resumeModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Resume Modal - Title-->
+                                    <h2 class="resume-modal-title text-secondary text-uppercase mb-0">Education</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Resume Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/resume/education.jpg" alt="..." width="300" height="300" />
+                                    <!-- Resume Modal - Text-->
+                                    <p class="mb-4"><b>2020-2024</b>
+                                        <ul>
+                                            <li>Bachelor Degree  at Geodetic Engineering, Gadjah Mada University</li>   
+                                        </ul>
+                                        <b>2021</b>
+                                        <ul>
+                                            <li>Python Online Course  @Progate</li>
+                                            <li>Survey and Mapping Training using Total Station @Arkabumi</li>
+                                        </ul>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Resume Modal 2-->
+        <div class="resume-modal modal fade" id="resumeModal2" tabindex="-1" aria-labelledby="resumeModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Resume Modal - Title-->
+                                    <h2 class="resume text-secondary text-uppercase mb-0">Languange</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Resume Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/resume/language.png" alt="..." width="300" height="300" />
+                                    <!-- Resume Modal - Text-->
+                                    <p class="mb-4">
+                                        <ul>
+                                            <li>Bahasa</li>
+                                            <li>English</li>
+                                        </ul>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Resume Modal 3-->
+        <div class="resume modal fade" id="resumeModal3" tabindex="-1" aria-labelledby="resumeModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Resume Modal - Title-->
+                                    <h2 class="resume-modal-title text-secondary text-uppercase mb-0">Skills</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Resume Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/resume/skill.jpg" alt="..." width="300" height="300" />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        <ul>
+                                            <li>Leadership</li>
+                                            <li>Communication</li>
+                                            <li>Critical Thinking</li>
+                                        </ul>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Resume Modal 4-->
+        <div class="resume-modal modal fade" id="resumeModal4" tabindex="-1" aria-labelledby="resumeModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Resume Modal - Title-->
+                                    <h2 class="resume-modal-title text-secondary text-uppercase mb-0">Organization Experience</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Resume Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/resume/organization.jpg" alt="..." width="300" height="300" />
+                                    <!-- Resume Modal - Text-->
+                                    <p class="mb-4"><b>Keluarga Mahasiswa Teknik Geodesi (2021 - 2023)</b>
+                                        <ul>
+                                            <li>Departemen Hubungan Alumni dan Lembaga - Staff divisi eksternal</li>
+                                            <li>Biro Pengembangan Sumber Daya Anggota - Kepala divisi inspektorat</li>
+                                        </ul></p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Resume Modal 5-->
+        <div class="resume modal fade" id="resumeModal5" tabindex="-1" aria-labelledby="resumeModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Resume Modal - Title-->
+                                    <h2 class="resume-modal-title text-secondary text-uppercase mb-0">Committee Experience</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Resume Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/resume/committee.png" alt="..." width="300" height="300"/>
+                                    <!-- Resume Modal - Text-->
+                                    <p class="mb-4"><b>2021</b>
+                                        <ul>
+                                            <li>PPSMB Kesatria - Divisi Pemandu</li>
+                                        </ul>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Resume Modal 6-->
+        <div class="recusandae modal fade" id="resumeModal6" tabindex="-1" aria-labelledby="resumeModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Resume Modal - Title-->
+                                    <h2 class="resume-modal-title text-secondary text-uppercase mb-0">Internship Experience</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/resume/inter.jpg" alt="..." width="300" height="300" />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        <ul>
+                                            <li>January,2022 - ATR/BPN Kab. Boyolali</li>
+                                            <li>July,2022 - Pertamina Gas Negara</li>
+                                        </ul>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
